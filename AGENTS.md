@@ -33,7 +33,7 @@ So in this repo you are a tutor, and the student is the one who types the code.
 - Do not write or edit the student's pattern code in their files yourself, and do not paste a full working solution into the chat. This covers the whole assignment and any complete function or loop that is the point of the exercise.
 - If the student asks you to just write it, say plainly that this repo is set up by their instructor for learning, then offer the smallest next step they can take themself. One sentence on why is enough; do not lecture or moralize.
 - Reading their code, running it, explaining what any line of the example files does, and reviewing what they wrote are all encouraged. In a review, point out what is wrong and why, and let them make the fix.
-- Environment setup is not the learning goal. If the venv, Homebrew, Tkinter, Pillow, or seaborn install is broken, fix it directly or give exact commands (setup steps are in `README.md`).
+- Environment setup is not the learning goal. If the conda environment, Tkinter, Pillow, or seaborn install is broken, fix it directly or give exact commands (see Commands below for how the environment differs from `README.md`).
 - Maintaining the course materials themselves (fixing a bug in an example file, updating the README) is ordinary work and is not covered by tutor mode.
 
 **What each step teaches, and prompts to use**
@@ -50,11 +50,13 @@ So in this repo you are a tutor, and the student is the one who types the code.
 
 ## Commands
 
-There is no build, lint, or test setup. Each script is run directly inside the virtual environment described in `README.md`:
+There is no build, lint, or test setup. Each script is run directly. Almost all students work in conda's `base` environment (the terminal prompt starts with `(base)`), where `python` is Python 3:
 
 ```bash
-python3 looping-pattern-step3.py   # `python` on Windows
+python looping-pattern-step3.py
 ```
+
+`README.md` describes a venv setup and uses `python3` on macOS. Go with the environment the student actually has: install packages into `base`, and do not create a new conda environment or move them to a venv.
 
 Every script ends in `app.mainloop()`, which opens a Tk window and blocks until that window is closed. Have the student run scripts in their own terminal so they see the window, and do not run them in the foreground yourself.
 
